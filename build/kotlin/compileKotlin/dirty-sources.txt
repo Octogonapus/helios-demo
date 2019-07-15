@@ -1,0 +1,6 @@
+/home/salmon/Documents/helios-demo/src/main/kotlin/com/octogonapus/heliosdemo/DataClass2.kt
+/home/salmon/Documents/helios-demo/src/main/kotlin/com/octogonapus/heliosdemo/Enum1.kt
+/home/salmon/Documents/helios-demo/src/main/kotlin/com/octogonapus/heliosdemo/DataClass1.kt
+/home/salmon/Documents/helios-demo/build/generated/source/kaptKotlin/main/json/json.com.octogonapus.heliosdemo.DataClass1.kt
+/home/salmon/Documents/helios-demo/build/generated/source/kaptKotlin/main/json/json.helios.dsl.syntax.com.octogonapus.heliosdemo.kt
+/home/salmon/Documents/helios-demo/build/generated/source/kaptKotlin/main/json/json.com.octogonapus.heliosdemo.DataClass2.kt
