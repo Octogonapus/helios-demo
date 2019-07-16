@@ -6,20 +6,17 @@ import helios.core.*
 import helios.instances.*
 import helios.typeclasses.*
 import helios.syntax.json.*
-import arrow.core.extensions.either.applicative.applicative
+
 
 fun DataClass1.toJson(): Json = JsObject(mapOf(
-"dataClass2" to com.octogonapus.heliosdemo.DataClass2.encoder().run { dataClass2.encode() }
-,
-"enum1" to com.octogonapus.heliosdemo.Enum1.encoder().run { enum1.encode() }
+"foo" to com.octogonapus.heliosdemo.Foo.encoder().run { foo.encode() }
 ))
 
 fun Json.Companion.toDataClass1(value: Json): Either<DecodingError, DataClass1> =
-  Either.applicative<DecodingError>().map(
-	value["dataClass2"].fold({Either.Left(KeyNotFound("dataClass2"))}, { com.octogonapus.heliosdemo.DataClass2.decoder().run { decode(it) } }),
-	value["enum1"].fold({Either.Left(KeyNotFound("enum1"))}, { com.octogonapus.heliosdemo.Enum1.decoder().run { decode(it) } })
-,  { (dataClass2,enum1) ->
-  DataClass1(dataClass2 = dataClass2,enum1 = enum1)
+  
+	value["foo"].fold({Either.Left(KeyNotFound("foo"))}, { com.octogonapus.heliosdemo.Foo.decoder().run { decode(it) } })
+.map( { foo ->
+  DataClass1(foo = foo)
 }).fix()
 
 
